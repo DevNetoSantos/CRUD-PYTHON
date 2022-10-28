@@ -1,7 +1,22 @@
-<h1>Create new User</h1>
+{% extends 'people/base.html' %}
 
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %}
-  {{form.as_p}}
-  <button type="submit">criar user</button>
-</form>
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'people/css/form.css' %}">
+
+<section class="mainForm">
+  <div class="form">
+    <adiv>
+      <h1>Create new User</h1>
+    </adiv>
+    <hr>
+    <div>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-primary" type="submit">criar user</button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}
