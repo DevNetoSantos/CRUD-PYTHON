@@ -1,8 +1,22 @@
-<h1>Edit User</h1>
+{% extends 'people/base.html' %}
 
-<form method="post">
-  {% csrf_token %}
-  {{form.as_p}}
-  <button type="submit">Save</button>
-  <a href="/">Cancel </a>
-</form>
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'people/css/form.css' %}">
+
+<section class="mainForm">
+  <div class="form">
+    <adiv>
+      <h1>Edit User</h1>
+    </adiv>
+    <hr>
+    <div>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-primary" type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}
