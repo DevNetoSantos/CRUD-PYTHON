@@ -21,6 +21,6 @@ urlpatterns = [
     path('', include('people.urls')),
     path('user/<int:id>/details', include('people.urls')),
     path('create/', include('people.urls')),
-    path('delete/', include('people.urls')),
-    path('update/', include('people.urls'))
+    path('user/<int:id>/delete/', include('people.urls')),
+    path('user/<int:id>/update/', include('people.urls'))
 ]

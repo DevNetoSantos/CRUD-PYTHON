@@ -1,0 +1,17 @@
+h1 {
+  color: blue;
+}
+
+.mainForm {
+  min-height: calc(100vh - 57px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  background-color: #ececec;
+  padding: 60px;
+  text-align: center;
+  border-radius: 20px;
+}

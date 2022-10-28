@@ -28,12 +28,14 @@ def create(request):
 
 
 def update(request, id):
-  onePeople = get_object_or_404(People, pk=id)
-  form = Form(instance =onePeople)
-  if request.method == 'POST':
-    if form.is_valid():
-      form.save()
-      return HttpResponseRedirect('/')
+  obj = get_object_or_404(People, pk=id)
+
+  form = Form(request.POST or None, instance = obj)
+
+  if form.is_valid():
+    form.save()
+    return HttpResponseRedirect('/')
+
   return render(request, 'people/update.html', {'form': form})
 
 
